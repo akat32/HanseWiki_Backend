@@ -1,13 +1,11 @@
 import * as express from "express";
-import { auth } from '../router/auth'
-
+import { auth } from '../routes/auth'
 
 import * as cors from 'cors';
 import * as bodyParser from 'body-parser'
 
 class App {
   public app: express.Application;
-
   /**
    * @ class App
    * @ method bootstrap
@@ -19,13 +17,13 @@ class App {
   }
   constructor () {
     this.app = express();
-    
+
     this.app.use(cors())
     this.app.use(bodyParser.json());
     this.app.use(bodyParser.urlencoded({limit: '1gb', extended: false }));
-    
+
     this.app.post('/signup', auth.signup)
-    this.app.get('/signin', auth.signin)
+    this.app.post('/signin', auth.signin)
   }
 }
 
