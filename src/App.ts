@@ -8,13 +8,16 @@ import * as session from 'express-session'
 import * as passport from 'passport'
 
 import * as passportConfig from './passport/index'
+
 const app = express()
+let router = express.Router()
 
 app.use(session({
   secret: 'qwldhcosahdfeshdfiudshfiudshfioudshfoiuashdviuhrsdsadcoiuhdsoiufhoiwusdhfoiuwedshfoiwesudhfocwiesaudhfvokalsudbvkjdscxbvkildshvpwosidzhvpbiu', 
   resave: true, 
   saveUninitialized: true
 }))
+
 app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({limit: '1gb', extended: false }));
