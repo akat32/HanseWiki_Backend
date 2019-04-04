@@ -1,13 +1,13 @@
 import * as express from "express";
-import { auth } from '../routes/auth'
+import { auth } from './routes/auth'
 
 import * as cors from 'cors';
 import * as bodyParser from 'body-parser'
-import { Users } from '../mongo/index'
+import { Users } from './mongo/index'
 import * as session from 'express-session'
 import * as passport from 'passport'
 
-import * as passportConfig from '../passport/index'
+import * as passportConfig from './passport/index'
 const app = express()
 
 app.use(session({
