@@ -28,6 +28,9 @@ const auth = {
     },
     passportSingin: async (req: express.Request, res:express.Response, next: express.NextFunction)=> {
         
+    },
+    logout: async (req:express.Request, res:express.Response, next:express.NextFunction)=> {
+
     }
 }
 
