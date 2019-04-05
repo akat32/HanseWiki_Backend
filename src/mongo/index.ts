@@ -1,5 +1,5 @@
 import * as mongoose from "mongoose";
-import { default as Users} from './User'
+import { Users} from './User'
 
 const uri: string = "mongodb://127.0.0.1:27017/hanseWikiDB";
 

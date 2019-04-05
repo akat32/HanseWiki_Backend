@@ -15,6 +15,4 @@ const UserSchema = new mongoose.Schema({
     isAdmin: {type: Boolean, default: false}
 })
 
-const Users = mongoose.model<IUsers>("Users", UserSchema);
-
-export default Users;
+export const Users = mongoose.model<IUsers>("users", UserSchema);

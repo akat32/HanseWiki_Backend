@@ -7,12 +7,11 @@ import { Users } from '../mongo/index'
 const LocalStrategy = passportLocal.Strategy;
 
 passport.serializeUser<any, any>((user, done) => {
-    done(undefined, user.id);
-  });  
-  passport.deserializeUser((id, done) => {
-    Users.findById(id, (err, user) => {
-      done(err, user);
-  });
+  done(undefined, user.id);
+});  
+
+passport.deserializeUser((obj, done) => {
+  done(null, obj);
 });
 
 passport.use(new LocalStrategy({
@@ -22,7 +21,7 @@ passport.use(new LocalStrategy({
     let user = await Users.findOne({
       id: id,
       passwd: passwd
-    })  
+    }, {__v: 0, _id:0})  
     if(user) return done(undefined, user)
     else return done(undefined, false, { message: "Invalid email or password." });
   }
