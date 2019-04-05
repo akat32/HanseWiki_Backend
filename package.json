@@ -1,5 +1,5 @@
 {
-  "name": "HanseWikiServer",
+  "name": "hansewikiserver",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@types/cors": "^2.8.4",
     "@types/passport": "^1.0.0",
+    "@types/passport-local": "^1.0.33",
     "cors": "^2.8.5",
     "express-session": "^1.15.6",
     "passport": "^0.4.0",

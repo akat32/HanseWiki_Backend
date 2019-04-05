@@ -26,9 +26,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.post('/signup', auth.signup)
-app.post('/signin', auth.signin)
-app.get('/', (req,res)=>{
+.post('/signin', auth.signin)
+.post('/passportin', passport.authenticate('local'), auth.passportSingin)
+.post('/chk', auth.chk)
+.get('/', (req,res)=>{
   res.send('asd')
 })
-
+  
 export default app;
