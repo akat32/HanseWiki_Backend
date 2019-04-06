@@ -25,12 +25,14 @@ app.use(bodyParser.urlencoded({limit: '1gb', extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
+// auth
 app.post('/signup', auth.signup)
 .post('/signin', auth.signin)
 .post('/passportin', passport.authenticate('local'), auth.passportSingin)
 .post('/chk', auth.chk)
-.get('/', (req,res)=>{
-  res.send('asd')
-})
-  
+
+// people
+
+app.post('/newPeople', );
+
 export default app;

@@ -7,7 +7,6 @@ import "../passport/index";
 
 const auth = {
     signup: async (req: express.Request, res: express.Response)=> {
-        console.log(req.body)
         let user = new Users({
             id: req.body.id,
             passwd: req.body.passwd,

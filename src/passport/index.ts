@@ -27,9 +27,9 @@ passport.use(new LocalStrategy({
   }
 ))
 
-let isAuthenticated = (req:Request, res:Response, next: NextFunction)=> {
+export let isAuthenticated = (req:Request, res:Response, next: NextFunction)=> {
   if (req.isAuthenticated()) {
     return next()
- }
+  }
   else res.status(401).json({message : "Users Not Authenticated"})
 }
