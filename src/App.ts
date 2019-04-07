@@ -33,6 +33,6 @@ app.post('/signup', auth.signup)
 
 // people
 
-app.post('/newPeople', );
+// app.post('/newPeople', );
 
 export default app;
