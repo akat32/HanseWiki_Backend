@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import randomString from 'randomstring'
+import * as randomString from 'randomstring'
 import { Contents } from '../mongo/Contents'
 import { Historys } from '../mongo/History'
 

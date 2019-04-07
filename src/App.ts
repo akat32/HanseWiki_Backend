@@ -16,7 +16,7 @@ let router = express.Router()
 app.use(session({
   secret: 'qwldhcosahdfeshdfiudshfiudshfioudshfoiuashdviuhrsdsadcoiuhdsoiufhoiwusdhfoiuwedshfoiwesudhfocwiesaudhfvokalsudbvkjdscxbvkildshvpwosidzhvpbiu', 
   resave: true, 
-  saveUninitialized: true
+  saveUninitialized: false
 }))
 
 app.use(cors())
@@ -40,6 +40,9 @@ app.post('/addContent', content.addContent)
 .post('/loadContent', content.loadContent)
 .post('/newContent', content.newContent)
 
+app.post('/userTest', (req,res)=>{
+  res.json(req.user)
+})
 // app.post('/newPeople', );
 
 export default app;
