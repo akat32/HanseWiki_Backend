@@ -1,5 +1,6 @@
 import * as express from "express";
 import { auth } from './routes/auth'
+import { content } from './routes/Content'
 
 import * as cors from 'cors';
 import * as bodyParser from 'body-parser'
@@ -25,13 +26,19 @@ app.use(bodyParser.urlencoded({limit: '1gb', extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-// auth
+// auth 회원 
 app.post('/signup', auth.signup)
 .post('/signin', auth.signin)
 .post('/passportin', passport.authenticate('local'), auth.passportSingin)
 .post('/chk', auth.chk)
 
-// people
+// people 학생 + 선생님
+
+// Content 대문에 뜰 리스트.
+app.post('/addContent', content.addContent)
+.post('/contentHistory', content.contentHistory)
+.post('/loadContent', content.loadContent)
+.post('/newContent', content.newContent)
 
 // app.post('/newPeople', );
 
