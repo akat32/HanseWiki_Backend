@@ -12,7 +12,10 @@ const content = {
             index: req.body.index
         }
         let result = await Contents.update({category: req.body.category},
-            {$set: {content: req.body.content}},
+            {$set: {content: req.body.content}}
+        )
+        if(!result.ok) return res.status(500).json({message : "failed update content"})
+        result = await Contents.update({category: req.body.category},
             {$push: {history: history}}
         )
         if(!result.ok) return res.status(500).json({message : "failed update content"})

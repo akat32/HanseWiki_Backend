@@ -35,10 +35,10 @@ app.post('/signup', auth.signup)
 // people 학생 + 선생님
 
 // Content 대문에 뜰 리스트.
-app.post('/addContent', content.addContent)
+app.post('/addContent', passportConfig.isAuthenticated, content.addContent)
 .post('/contentHistory', content.contentHistory)
 .post('/loadContent', content.loadContent)
-.post('/newContent', content.newContent)
+.post('/newContent', passportConfig.isAuthenticated, content.newContent)
 .post('/CChk', content.chk)
 app.post('/userTest', (req,res)=>{
   res.json(req.user)
