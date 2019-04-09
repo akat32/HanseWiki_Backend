@@ -1,7 +1,7 @@
 import * as express from "express";
 import { auth } from './routes/auth'
 import { content } from './routes/Content'
-
+import { history } from './routes/History'
 import * as cors from 'cors';
 import * as bodyParser from 'body-parser'
 import { Users } from './mongo/index'
@@ -40,6 +40,11 @@ app.post('/addContent', passportConfig.isAuthenticated, content.addContent)
 .post('/loadContent', content.loadContent)
 .post('/newContent', passportConfig.isAuthenticated, content.newContent)
 .post('/CChk', content.chk)
+
+// 편집 기록
+app.post('/findHistory', history.findHistory)
+.post('/allHistory', history.all)
+
 app.post('/userTest', (req,res)=>{
   res.json(req.user)
 })
