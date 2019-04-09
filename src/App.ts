@@ -15,8 +15,8 @@ let router = express.Router()
 
 app.use(session({
   secret: 'qwldhcosahdfeshdfiudshfiudshfioudshfoiuashdviuhrsdsadcoiuhdsoiufhoiwusdhfoiuwedshfoiwesudhfocwiesaudhfvokalsudbvkjdscxbvkildshvpwosidzhvpbiu', 
-  resave: true, 
-  saveUninitialized: false
+  resave: true,
+  saveUninitialized: true
 }))
 
 app.use(cors())

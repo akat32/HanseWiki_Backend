@@ -7,7 +7,7 @@ import { Users } from '../mongo/index'
 const LocalStrategy = passportLocal.Strategy;
 
 passport.serializeUser<any, any>((user, done) => {
-  done(undefined, user.id);
+  done(undefined, user);
 });  
 
 passport.deserializeUser((obj, done) => {
