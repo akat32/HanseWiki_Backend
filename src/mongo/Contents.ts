@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose'
 
 interface IContents extends mongoose.document {
     content: Object,
-    categoty: Number,
+    category: Number,
     history: [{
         writer: String,
         token: String,
@@ -13,7 +13,7 @@ interface IContents extends mongoose.document {
 
 const ContentSchema = new mongoose.Schema ({
     content: Object,
-    categoty: Number,
+    category: {type: Number, unique: true},
     history: [{
         writer: String,
         token: String,

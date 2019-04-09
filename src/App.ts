@@ -39,7 +39,7 @@ app.post('/addContent', content.addContent)
 .post('/contentHistory', content.contentHistory)
 .post('/loadContent', content.loadContent)
 .post('/newContent', content.newContent)
-
+.post('/CChk', content.chk)
 app.post('/userTest', (req,res)=>{
   res.json(req.user)
 })
