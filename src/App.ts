@@ -48,6 +48,9 @@ app.post('/findHistory', history.findHistory)
 app.post('/userTest', (req,res)=>{
   res.json(req.user)
 })
-// app.post('/newPeople', );
 
+app.get('/isauth', passportConfig.isAuthenticated, (req: express.Request, res: express.Response)=>{
+  res.status(200).json({user: req.user})
+})
+// app.post('/newPeople', );
 export default app;
