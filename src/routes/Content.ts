@@ -59,7 +59,7 @@ const content = {
         catch (e) { return res.status(500).json({message : "save ERR!"})}
         return res.status(200).json({message : "save success!"})
     },
-    chk: async(req:Request, res:Response)=> {
+    chk: async(req:Request, res:Response, next: NextFunction)=> {
         let result = await Contents.find()
         res.send(result)
     }
